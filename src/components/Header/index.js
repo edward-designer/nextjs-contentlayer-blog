@@ -4,9 +4,9 @@ import { GithubIcon, LinkedinIcon, SunIcon, TwitterIcon } from "../icons";
 
 const Header = () => {
   return (
-    <header className="w-full p-4 px-10 flex items-center justify-between">
+    <header className="p-4 px-10 flex items-center justify-between z-50 relative">
       <Logo />
-      <nav className="py-4 px-4 border border-solid border-dark rounded-full font-medium items-center flex gap-4 fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm">
+      <nav className="py-4 px-4 border border-solid border-dark rounded-full font-medium items-center flex gap-4 fixed top-6 right-1/2 translate-x-1/2 bg-light/60 backdrop-blur-sm">
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>

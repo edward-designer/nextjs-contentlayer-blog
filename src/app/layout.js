@@ -4,6 +4,7 @@ import { cx } from "../utils";
 import Header from "@/src/components/Header";
 
 import "./globals.css";
+import Footer from "../components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
