@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { slug } from "github-slugger";
 
 import Tag from "../Elements/Tag";
 
@@ -19,7 +20,7 @@ const BlogLayout1 = ({ blog }) => {
         className="object-center object-cover -z-10 group-hover:scale-105 transition-all duration-500"
       />
       <div className="w-full p-8 flex flex-col items-start justify-center text-light z-0 relative">
-        <Tag name={blog.tags[0]} link={`/categories/${blog.tags[0]}`} />
+        <Tag name={blog.tags[0]} link={`/categories/${slug(blog.tags[0])}`} />
         <Link href={blog.url} className="mt-2">
           <h1 className="font-bold capitalize text-2xl text-balance">
             <span className="bg-gradient-to-r from-white/50 to-accent/100 bg-[length:0px_1px] hover:bg-[length:100%_3px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">

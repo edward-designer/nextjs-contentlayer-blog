@@ -1,12 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Tag from "../Elements/Tag";
 import { format } from "date-fns";
+import { motion } from "framer-motion";
 
 const BlogLayout3 = ({ blog }) => {
   return (
-    <div className="group flex flex-col h-full items-center text-dark gap-3">
+    <motion.div
+      className="group flex flex-col h-full items-center text-dark gap-3"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.5 }}
+      transition={{ duration: 0.2, type: "tween" }}
+      layoutId={blog.title}
+    >
       <Link
         href={blog.url}
         className="aspect-[4/3] w-full rounded-lg overflow-hidden relative"
@@ -35,7 +42,7 @@ const BlogLayout3 = ({ blog }) => {
           {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

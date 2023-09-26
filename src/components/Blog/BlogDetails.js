@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
+import { slug } from "github-slugger";
 
-const BlogDetails = ({ blog, slug }) => {
+const BlogDetails = ({ blog }) => {
   return (
     <div
       className="px-10 bg-accent text-light flex items-center
@@ -12,7 +13,7 @@ const BlogDetails = ({ blog, slug }) => {
       </div>
       <span>10 views</span>
       <div>{blog.readingTime.text}</div>
-      <Link href={`/categories/${blog.tags[0]}`}>#{blog.tags[0]}</Link>
+      <Link href={`/categories/${slug(blog.tags[0])}`}>#{blog.tags[0]}</Link>
     </div>
   );
 };

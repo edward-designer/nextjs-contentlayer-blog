@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { slug } from "github-slugger";
 import Tag from "@/src/components/Elements/Tag";
 import { allBlogs } from "contentlayer/generated";
 import BlogDetails from "@/src/components/Blog/BlogDetails";
@@ -28,7 +28,7 @@ const BlogPage = ({ params }) => {
         <div className="w-full z-10 flex flex-col items-center justify-center relative">
           <Tag
             name={blog.tags[0]}
-            link={`/categories/${blog.tags[0]}`}
+            link={`/categories/${slug(blog.tags[0])}`}
             className="px-6 text-sm py-2"
           />
           <h1 className="mt-6 font-semibold capitalize text-light text-5xl w-5/6 leading-tight">
@@ -36,7 +36,7 @@ const BlogPage = ({ params }) => {
           </h1>
         </div>
       </div>
-      <BlogDetails blog={blog} slug={params.slug} />
+      <BlogDetails blog={blog} slug={slug(params.slug)} />
       <div className="grid grid-cols-12 gap-16 mt-8 px-10">
         <div className="col-span-4">
           <details className="text-sm border-[1px] border-solid border-dark text-dark rounded-lg p-4 sticky top-6 max-h-[88vh] overflow-hidden overflow-y-auto">
