@@ -5,6 +5,10 @@ import { allBlogs } from "contentlayer/generated";
 import BlogDetails from "@/src/components/Blog/BlogDetails";
 import RenderMDX from "@/src/components/Blog/RenderMDX";
 
+export async function generateStaticParams() {
+  return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
+}
+
 const BlogPage = ({ params }) => {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 
@@ -39,7 +43,7 @@ const BlogPage = ({ params }) => {
       <BlogDetails blog={blog} slug={slug(params.slug)} />
       <div className="grid grid-cols-12 gap-16 mt-8 px-10">
         <div className="col-span-4">
-          <details className="text-sm border-[1px] border-solid border-dark text-dark rounded-lg p-4 sticky top-6 max-h-[88vh] overflow-hidden overflow-y-auto">
+          <details className="text-sm bg-dark/5 text-dark rounded-lg p-4 sticky top-6 max-h-[88vh] overflow-hidden overflow-y-auto">
             <summary className="text-lg font-semibold cursor-pointer">
               Table of Contents
             </summary>
@@ -50,7 +54,7 @@ const BlogPage = ({ params }) => {
                   className={`${
                     heading.level === 3
                       ? "ml-3"
-                      : "ml-1 border-t border-solid border-accent/10 font-semibold mt-2"
+                      : "ml-1 border-t border-solid border-accent/10 font-semibold mt-4"
                   } py-1`}
                 >
                   <a href={`#${heading.slug}`} className="hover:text-accent">
@@ -61,7 +65,7 @@ const BlogPage = ({ params }) => {
             </ul>
           </details>
         </div>
-        <div className="col-span-8 font-in prose prose-blockquote:rounded-r-lg prose-blockquote:bg-accent/20 prose-blockquote:px-8 prose-blockquote:py-4 prose-blockquote:border-accent">
+        <div className="col-span-8 font-in prose prose-blockquote:rounded-r-lg prose-blockquote:bg-accent/20 prose-blockquote:px-8 prose-blockquote:py-4 prose-blockquote:border-accent max-w-full">
           <RenderMDX blog={blog} />
         </div>
       </div>

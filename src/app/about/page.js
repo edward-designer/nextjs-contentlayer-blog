@@ -1,7 +1,7 @@
-import React from "react";
+import AboutCoverSection from "@/src/components/About/AboutCoverSection";
 
 const About = () => {
-  return <div>About</div>;
+  return <AboutCoverSection />;
 };
 
 export default About;

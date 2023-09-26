@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="p-4 px-10 flex items-center justify-between z-50 relative">
       <Logo />
-      <nav className="py-4 px-4 border border-solid border-dark rounded-full font-medium items-center flex gap-4 top-6 bg-light/60 backdrop-blur-sm">
+      <nav className="py-3 px-4 font-medium items-center flex gap-4 top-6 bg-light/60 backdrop-blur-sm">
         {pages.map((page) => {
           const route = page === "home" ? "" : page;
           return (
