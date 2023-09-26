@@ -4,7 +4,7 @@ import BlogLayout2 from "../Blog/BlogLayout2";
 
 const FeaturedPost = ({ blogs }) => {
   return (
-    <section className="w-full mt-32 px-8 flex flex-col items-center justify-center">
+    <section className="w-full mt-32 px-8 flex flex-col items-center justify-center rounded-2xl">
       <h2 className="w-full font-bold capitalize text-4xl">Featured Posts</h2>
       <div className="w-full grid grid-cols-2 grid-rows-2 gap-6 mt-8 ">
         <article className="col-span-1 row-span-2">

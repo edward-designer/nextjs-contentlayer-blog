@@ -20,7 +20,7 @@ const BlogLayout3 = ({ blog }) => {
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-500"
         />
       </Link>
-      <div className="">
+      <div className="flex flex-col w-full">
         <span className="uppercase text-accent font-semibold text-sm">
           {blog.tags[0]}
         </span>

@@ -8,7 +8,7 @@ const BlogLayout1 = ({ blog }) => {
     <div className="group h-full overflow-hidden rounded-xl flex flex-column relative items-end">
       <div
         aria-hidden={true}
-        className="absolute inset-0 h-full bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-2xl z-0"
+        className="absolute inset-0 h-full bg-gradient-to-b from-transparent from-0% to-dark/90 z-0"
       />
       <Image
         alt={blog.title}
@@ -16,7 +16,7 @@ const BlogLayout1 = ({ blog }) => {
         placeholder="blur"
         blurDataURL={blog.image.blurhashDataUrl}
         fill
-        className="object-center object-cover rounded-2xl -z-10 group-hover:scale-105 transition-all duration-500"
+        className="object-center object-cover -z-10 group-hover:scale-105 transition-all duration-500"
       />
       <div className="w-full p-8 flex flex-col items-start justify-center text-light z-0 relative">
         <Tag name={blog.tags[0]} link={`/categories/${blog.tags[0]}`} />
