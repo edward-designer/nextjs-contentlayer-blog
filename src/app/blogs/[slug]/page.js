@@ -6,6 +6,7 @@ import BlogDetails from "@/src/components/Blog/BlogDetails";
 import RenderMDX from "@/src/components/Blog/RenderMDX";
 import { siteMetaData } from "@/src/utils/siteMetaData";
 import BlogTOC from "@/src/components/Blog/BlogTOC";
+import Discussion from "@/src/components/Blog/Discussion";
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -123,6 +124,7 @@ const BlogPage = ({ params }) => {
           </div>
           <div className="md:col-span-8 font-in prose dark:prose-invert prose-blockquote:rounded-r-lg prose-blockquote:bg-accent/20 prose-blockquote:px-8 prose-blockquote:py-4 prose-blockquote:border-accent max-w-full">
             <RenderMDX blog={blog} />
+            <Discussion />
           </div>
         </div>
       </article>
