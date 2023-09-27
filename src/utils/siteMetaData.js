@@ -4,11 +4,10 @@ export const siteMetaData = {
   headerTitle: "Next.js Blog",
   description: "A blog created with Next.js, Tailwind.css and contentlayer.",
   language: "en-us",
-  theme: "system", // system, dark or light
-  siteUrl:
-    "https://nextjs-contentlayer-blog-myovew0na-edward-designer.vercel.app", // your website URL
+  theme: "system",
+  siteUrl: "https://nedward-nextjs-contentlayer.vercel.app",
   siteLogo: "/logo.png",
-  socialBanner: "/social-banner.png", // add social banner in the public folder
+  socialBanner: "/social-banner.png",
   email: "edward.chung.designer@gmail.com",
   github: "https://github.com/edward-designer",
   twitter: "https://twitter.com/edwebdeveloper",
