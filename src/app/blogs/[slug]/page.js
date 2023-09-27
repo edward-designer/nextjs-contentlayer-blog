@@ -40,7 +40,7 @@ const BlogPage = ({ params }) => {
           </h1>
         </div>
       </div>
-      <BlogDetails blog={blog} slug={slug(params.slug)} />
+      <BlogDetails blog={blog} blogSlug={slug(params.slug)} />
       <div className="grid grid-cols-12 gap-16 mt-8 px-10">
         <div className="col-span-4">
           <details className="text-sm bg-dark/5 text-dark rounded-lg p-4 sticky top-6 max-h-[88vh] overflow-hidden overflow-y-auto">

@@ -4,12 +4,12 @@ import Link from "next/link";
 import BlogLayout3 from "../Blog/BlogLayout3";
 import { AnimatePresence } from "framer-motion";
 
-const RecentPosts = ({ blogs, title = "Recent Posts" }) => {
+const RecentPosts = ({ blogs, title = "Recent Posts", viewAll = true }) => {
   return (
     <section className="w-full mt-16 px-8 flex flex-col items-center justify-center">
       <div className="flex w-full flex-row justify-between items-center">
         <h2 className="font-bold capitalize text-4xl">{title}</h2>
-        {title === "Recent Posts" && (
+        {viewAll && (
           <Link
             href="/categories/all"
             className="block font-medium text-accent underline underline-offset-2 text-lg"

@@ -42,7 +42,7 @@ const CategoryPage = ({ params }) => {
         active={category}
         className="sticky top-0 z-10 backdrop-blur-md"
       />
-      <RecentPosts blogs={blogs} title={`#${category}`} />
+      <RecentPosts blogs={blogs} title={`#${category}`} viewAll={false} />
     </div>
   );
 };

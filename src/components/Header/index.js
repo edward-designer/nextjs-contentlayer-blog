@@ -8,7 +8,7 @@ import { GithubIcon, LinkedinIcon, SunIcon, TwitterIcon } from "../icons";
 
 import { motion } from "framer-motion";
 
-const pages = ["home", "about", "contact"];
+const pages = ["home", "blogs", "about", "contact"];
 
 const Header = () => {
   const path = usePathname();
@@ -18,10 +18,11 @@ const Header = () => {
       <nav className="py-3 px-4 font-medium items-center flex gap-4 top-6 bg-light/60 backdrop-blur-sm">
         {pages.map((page) => {
           const route = page === "home" ? "" : page;
+          const regExp = new RegExp(page === "home" ? "/$" : page === "blogs" ? `/[${route}|categories]` : `/${route}`, "g");
           return (
             <Link key={page} href={`/${route}`} className="relative">
               {page.toUpperCase()}
-              {path === `/${route}` && (
+              {path.match(regExp) && (
                 <motion.span
                   layoutId="underline"
                   className="block w-full h-[1px] absolute bg-accent"
