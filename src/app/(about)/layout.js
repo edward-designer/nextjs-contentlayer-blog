@@ -1,5 +1,5 @@
 import React from "react";
-import Insight from "./insight";
+import Insight from "../../components/Elements/insight";
 
 const insights = [
   "20+ Projects Completed",

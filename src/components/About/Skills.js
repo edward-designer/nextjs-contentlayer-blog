@@ -16,8 +16,8 @@ const SkillList = [
 
 const Skills = () => {
   return (
-    <section className="w-full flex flex-col p-20 text-dark">
-      <span className="font-semibold text-4xl text-accent">Skillset</span>
+    <section className="w-full flex flex-col p-4 md:p-20">
+      <span className="font-semibold text-3xl md:text-4xl text-accent">Skillset</span>
       <ul className="flex flex-wrap mt-8 justify-start gap-4">
         {SkillList.map((item, index) => {
           return (

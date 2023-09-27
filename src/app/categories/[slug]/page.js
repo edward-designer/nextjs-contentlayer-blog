@@ -2,6 +2,7 @@ import Categories from "@/src/components/Blog/Categories";
 import RecentPosts from "@/src/components/Home/RecentPosts";
 import { allBlogs } from "contentlayer/generated";
 import GithubSlugger, { slug } from "github-slugger";
+import { siteMetaData } from "@/src/utils/siteMetaData";
 
 const slugger = new GithubSlugger();
 
@@ -22,6 +23,34 @@ export async function generateStaticParams() {
   });
 
   return paths;
+}
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  const allCategories = [
+    "all",
+    ...new Set([...allBlogs.map((blog) => blog.tags).flat(Infinity)]),
+  ];
+  const category = allCategories.find((cat) => slug(cat) === params.slug);
+  const title = `Blog Category: ${category
+    .toLowerCase()
+    .replace(/\b\w/g, (s) => s.toUpperCase())}`;
+  const description = `Learn more about ${category} through our collection of expert articles`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${siteMetaData.siteUrl}/categories/${params.slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 const CategoryPage = ({ params }) => {
