@@ -1,6 +1,4 @@
-const { siteMetaData } = require("./src/utils/siteMetaData");
-
 module.exports = {
-  siteUrl: siteMetaData.siteUrl,
+  siteUrl: "nextjs-contentlayer-blog-myovew0na-edward-designer.vercel.app",
   generateRobotsTxt: true,
 };

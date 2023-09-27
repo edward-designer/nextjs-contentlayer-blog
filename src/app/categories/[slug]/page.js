@@ -32,8 +32,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
   ];
   const category = allCategories.find((cat) => slug(cat) === params.slug);
   const title = `Blog Category: ${category
-    .toLowerCase()
-    .replace(/\b\w/g, (s) => s.toUpperCase())}`;
+    ?.toLowerCase()
+    ?.replace(/\b\w/g, (s) => s.toUpperCase())}`;
   const description = `Learn more about ${category} through our collection of expert articles`;
 
   return {
