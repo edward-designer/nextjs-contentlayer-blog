@@ -18,6 +18,7 @@ const BlogLayout1 = ({ blog }) => {
         blurDataURL={blog.image.blurhashDataUrl}
         fill
         className="object-center object-cover -z-10 group-hover:scale-105 transition-all duration-500"
+        sizes="(max-width: 1180px) 100vw, 50vw"
       />
       <div className="w-full p-8 flex flex-col items-start justify-center text-light z-0 relative">
         <Tag name={blog.tags[0]} link={`/categories/${slug(blog.tags[0])}`} />

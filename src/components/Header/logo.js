@@ -10,6 +10,8 @@ const Logo = () => {
           src={profileImg}
           alt="profile image"
           className="w-full h-auto rounded-full"
+          sizes="20vw"
+          priority
         />
       </div>
       <span>Edblog</span>

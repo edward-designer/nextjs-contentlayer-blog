@@ -66,6 +66,7 @@ const BlogPage = ({ params }) => {
             blurDataURL={blog.image.blurhashDataUrl}
             fill
             className="w-full h-full object-cover object-center"
+            sizes="100vw"
           />
           <div
             aria-hidden={true}

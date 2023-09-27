@@ -13,6 +13,8 @@ const AboutCoverSection = () => {
             alt="edward"
             className="w-full md:h-full object-contain md:object-cover object-center"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
           />
         </div>
         <div className="w-1/2 flex flex-col text-left items-start justify-center px-4 md:px-16">

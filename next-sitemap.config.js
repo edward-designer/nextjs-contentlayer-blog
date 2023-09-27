@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "nextjs-contentlayer-blog-myovew0na-edward-designer.vercel.app",
+  siteUrl: "https://edward-nextjs-contentlayer.vercel.app",
   generateRobotsTxt: true,
 };

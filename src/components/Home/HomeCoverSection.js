@@ -20,7 +20,9 @@ const HomeCoverSection = ({ blog }) => {
               </span>
             </h1>
           </Link>
-          <p className="inline-block mt-2 md:mt-4 text-sm md:text-base font-in">{blog.description}</p>
+          <p className="inline-block mt-2 md:mt-4 text-sm md:text-base font-in">
+            {blog.description}
+          </p>
         </div>
         <Image
           alt={blog.title}
@@ -29,6 +31,8 @@ const HomeCoverSection = ({ blog }) => {
           blurDataURL={blog.image.blurhashDataUrl}
           fill
           className="object-center object-cover rounded-3xl -z-10"
+          sizes="100vw"
+          priority
         />
       </article>
     </div>
